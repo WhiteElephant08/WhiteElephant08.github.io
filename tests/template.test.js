@@ -94,6 +94,19 @@ test('uses accessible hash-linked tabs for the main homepage sections', () => {
   assert.match(script, /ArrowRight/);
 });
 
+test('publishes the DPTC planning-budget project with scoped development results', () => {
+  const projects = read('_data/projects.yml');
+
+  assert.match(projects, /DPTC: Adaptive Planning-Budget Allocation/);
+  assert.match(projects, /复用缓存计划/);
+  assert.match(projects, /同状态反事实分支实验/);
+  assert.match(projects, /64场开发实验/);
+  assert.match(projects, /54\.4%/);
+  assert.match(projects, /73\.3%/);
+  assert.match(projects, /35\/64/);
+  assert.doesNotMatch(projects, /普遍|显著优于|state-of-the-art|SOTA/i);
+});
+
 test('removes public template demo pages and navigation', () => {
   const navigation = read('_data/navigation.yml');
   const removed = ['showcase.html', 'blog.html', 'publications.html', 'index_layout2.html'];
