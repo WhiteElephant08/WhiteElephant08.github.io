@@ -1,6 +1,6 @@
 <div class="row sticky-top" style="top: 80px">
     <div class="col">
-        <div class="card border-0 shadow-sm bg-white">
+        <div class="card border-0 shadow-sm bg-white academic-profile-card">
             <div class="card-body px-4 pt-4 pb-3">
                 <div class="row">
                     <div class="col">
@@ -9,13 +9,13 @@
                         <div class="figure d-none d-md-block">
                             <img 
                                 src="{{ site.data.profile.portrait_url | relative_url }}" 
-                                class="figure-img img-fluid" 
+                                class="figure-img img-fluid academic-profile-portrait"
                                 data-toggle="tooltip" 
                                 data-placement="top" 
                                 title="{{ site.data.profile.portrait_caption }}">
                         </div>
                         <div class="mb-3 d-md-none text-center">
-                            <img src="{{ site.data.profile.portrait_url | relative_url }}" class="rounded-circle" style="max-width: 50%;" alt="Portrait">
+                            <img src="{{ site.data.profile.portrait_url | relative_url }}" class="rounded-circle academic-profile-portrait" alt="Portrait">
                         </div>
                         {% endif %}
                     </div>

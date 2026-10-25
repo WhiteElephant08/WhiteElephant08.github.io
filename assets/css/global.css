@@ -160,6 +160,41 @@ div.lazy {
     --academic-wash: #f3f7f8;
 }
 
+.academic-profile-card {
+    overflow: hidden;
+    border: 1px solid #e1e8ec !important;
+    border-radius: 0.5rem !important;
+}
+
+.academic-profile-card .figure {
+    margin: 0 0 1rem;
+    text-align: center;
+}
+
+.academic-profile-portrait {
+    display: block;
+    width: 10.5rem;
+    height: 10.5rem;
+    max-width: 100%;
+    margin: 0 auto;
+    border: 4px solid #fff;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 10px 28px rgba(31, 75, 92, 0.16);
+}
+
+.academic-profile-card .h4 {
+    margin-bottom: 0.5rem;
+    color: #182936;
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+.academic-profile-card .small {
+    color: #566773;
+    line-height: 1.6;
+}
+
 .academic-tab-shell {
     position: sticky;
     top: 72px;
