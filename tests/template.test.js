@@ -97,13 +97,13 @@ test('uses accessible hash-linked tabs for the main homepage sections', () => {
 test('publishes the DPTC planning-budget project with scoped development results', () => {
   const projects = read('_data/projects.yml');
 
-  assert.match(projects, /DPTC: Adaptive Planning-Budget Allocation/);
-  assert.match(projects, /复用缓存计划/);
-  assert.match(projects, /同状态反事实分支实验/);
+  assert.match(projects, /DPTC: Adaptive Compute Allocation/);
+  assert.match(projects, /冻结视觉世界模型/);
+  assert.match(projects, /受控配对评价工具/);
   assert.match(projects, /64场开发实验/);
   assert.match(projects, /54\.4%/);
   assert.match(projects, /73\.3%/);
-  assert.match(projects, /35\/64/);
+  assert.doesNotMatch(projects, /执行1、3或5步|同状态反事实分支|局部轨迹|固定策略退化|反事实数据不足|35\/64/);
   assert.doesNotMatch(projects, /普遍|显著优于|state-of-the-art|SOTA/i);
 });
 

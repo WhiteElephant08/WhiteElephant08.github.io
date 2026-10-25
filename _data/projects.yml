@@ -15,19 +15,19 @@
     - Python
     - Experimental Design
 
-- title: "DPTC: Adaptive Planning-Budget Allocation for Visual World-Model Control"
-  title_zh: 面向视觉世界模型控制的自适应规划预算分配
+- title: "DPTC: Adaptive Compute Allocation for Visual World-Model Control"
+  title_zh: 视觉世界模型控制中的自适应规划计算研究
   status: Research Project
   summary: >-
-    研究视觉世界模型控制中的自适应规划计算分配，根据执行状态在复用缓存计划与调用CEM/MPC完整重规划之间进行选择，以减少不必要的模型预测和规划开销。
+    研究视觉世界模型控制中的计算预算分配问题，探索如何在闭环执行中减少不必要的规划开销，同时保持对任务状态变化的响应能力。
   contributions:
-    - 设计执行1、3或5步缓存动作后重新决策的规划策略，分析计算成本、纠错频率与闭环成功率之间的权衡。
-    - 构建同场景成对评估与同状态反事实分支实验，从一致的MuJoCo状态比较不同规划决策。
-    - 在64场开发实验中保持35/64总体成功数，同时将规划推理时间降低54.4%，世界模型预测工作量降低73.3%。
+    - 集成冻结视觉世界模型、MuJoCo机械臂环境与CEM/MPC规划器，构建覆盖规划、执行、轨迹记录和闭环评价的实验系统。
+    - 实现多种计算预算策略及受控配对评价工具，用于比较规划成本、行为差异与任务表现。
+    - 在64场开发实验中观察到规划器推理时间降低54.4%、候选模型预测工作量降低73.3%，并通过逐场分析界定结果的适用范围。
   tags:
     - Python
     - PyTorch
     - MuJoCo
-    - World Models
+    - Visual World Models
     - CEM
     - MPC
