@@ -29,16 +29,18 @@ test('publishes the confirmed education details without inventing dates or degre
 
   assert.match(profile, /Northeastern University \(China\)/);
   assert.match(profile, /Faculty of Robot Science and Engineering/);
-  assert.match(profile, /position: Robotics Engineering/);
+  assert.match(profile, /B\.Eng\. Candidate in Robotics Engineering/);
+  assert.match(profile, /date: 2024 — 2028/);
   assert.doesNotMatch(profile, /Education entry pending|date: Pending/);
 });
 
 test('about section follows a concise academic profile structure', () => {
   const profile = read('_data/profile.yml');
 
-  assert.match(profile, /机器人学习/);
-  assert.match(profile, /VLA与计算机视觉/);
-  assert.match(profile, /利用执行反馈改进机器人策略/);
+  assert.match(profile, /Robotics Engineering undergraduate/);
+  assert.match(profile, /robot learning/);
+  assert.match(profile, /vision-language-action models/);
+  assert.match(profile, /execution feedback to improve robot policies/);
   assert.match(profile, /PyTorch/);
   assert.match(profile, /Python/);
   assert.match(profile, /C\+\+/);

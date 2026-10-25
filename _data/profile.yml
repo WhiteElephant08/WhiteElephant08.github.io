@@ -15,7 +15,7 @@ github: WhiteElephant08
 short_bio_text_justify: false
 short_bio: >-
   <p>
-    本科就读于东北大学机器人工程专业，关注机器人学习、VLA与计算机视觉，尤其对利用执行反馈改进机器人策略感兴趣。
+    Robotics Engineering undergraduate at Northeastern University (China), with interests in robot learning, vision-language-action models, and computer vision, particularly in using execution feedback to improve robot policies.
   </p>
 
 portrait_url: /assets/images/photos/portrait.jpg
@@ -25,7 +25,8 @@ portrait_caption: >-
 education:
 - name: Northeastern University (China)
   dept: Faculty of Robot Science and Engineering
-  position: Robotics Engineering
+  position: B.Eng. Candidate in Robotics Engineering
+  date: 2024 — 2028
 
 awards:
 - name: The 19th Advanced Robotics and Simulation Technology Competition
