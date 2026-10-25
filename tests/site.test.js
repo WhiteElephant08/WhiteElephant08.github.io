@@ -159,3 +159,18 @@ test('site declares a local favicon that exists', () => {
   assert.match(html, /rel="icon"[^>]*href="assets\/img\/favicon\.svg"/);
   assert.equal(fs.existsSync(path.join(root, 'assets/img/favicon.svg')), true);
 });
+
+test('delivery repository excludes Jekyll and fictional academic samples', () => {
+  const forbiddenPaths = [
+    '_config.yml', 'Gemfile', 'CNAME', 'index.md', 'html_source_file',
+    '_data', '_includes', '_layouts', '_sass', 'assets/files/curriculum_vitae.pdf',
+    'assets/img/avatar.png', 'assets/img/teaser_example.png', 'assets/img/teaser_example_2.png',
+  ];
+
+  for (const relativePath of forbiddenPaths) {
+    assert.equal(fs.existsSync(path.join(root, relativePath)), false, `${relativePath} should be removed`);
+  }
+
+  const publicCopy = `${read('index.html')} ${read('assets/js/content.js')}`;
+  assert.doesNotMatch(publicCopy, /Your Name|Ph\.D\.|CVPR|NeurIPS|curriculum vitae/i);
+});
