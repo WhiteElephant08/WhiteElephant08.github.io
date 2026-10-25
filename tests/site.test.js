@@ -99,6 +99,15 @@ test('theme control exposes state to assistive technology', () => {
   assert.match(script, /setAttribute\("aria-pressed"/);
 });
 
+test('saved theme is applied before the stylesheet loads', () => {
+  const html = read('index.html');
+  const bootstrapPosition = html.indexOf('localStorage.getItem("site-theme")');
+  const stylesheetPosition = html.indexOf('assets/css/site.css');
+
+  assert.ok(bootstrapPosition > -1, 'theme bootstrap should exist in the document head');
+  assert.ok(bootstrapPosition < stylesheetPosition, 'theme bootstrap should run before CSS loads');
+});
+
 test('unverified work is visibly marked as provisional', () => {
   const content = loadContent();
 
