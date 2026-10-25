@@ -67,6 +67,7 @@ test('does not present template publications or news on the homepage', () => {
 test('shows the confirmed VLA research project without publishing exact results', () => {
   const projects = read('_data/projects.yml');
   const homepage = read('index.html');
+  const projectWidget = read('_includes/widgets/project_card.html');
 
   assert.match(projects, /Failure-Guided Continuation Learning/);
   assert.match(projects, /LIBERO/);
@@ -76,6 +77,9 @@ test('shows the confirmed VLA research project without publishing exact results'
   assert.match(projects, /研究项目 · 论文稿件/);
   assert.doesNotMatch(projects, /70\.7|44\.0|58\.7|26\.7|106\/150|66\/150|88\/150|360,?000|450次/);
   assert.match(homepage, /widgets\/home_tabs\.html/);
+  assert.match(projects, /image: \/assets\/images\/projects\/vla-main-task-success\.png/);
+  assert.equal(fs.existsSync(path.join(root, 'assets/images/projects/vla-main-task-success.png')), true);
+  assert.match(projectWidget, /academic-project-figure/);
 });
 
 test('uses accessible hash-linked tabs for the main homepage sections', () => {

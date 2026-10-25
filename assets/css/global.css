@@ -495,6 +495,29 @@ div.lazy {
     margin-top: 1rem !important;
 }
 
+.academic-project-figure {
+    margin: 0.8rem 0 1rem;
+    overflow: hidden;
+    border: 1px solid var(--academic-line);
+    border-radius: 0.4rem;
+    background: var(--academic-wash);
+}
+
+.academic-project-figure a,
+.academic-project-figure img {
+    display: block;
+    width: 100%;
+}
+
+.academic-project-figure img {
+    height: auto;
+}
+
+.academic-project-figure a:focus-visible {
+    outline: 3px solid rgba(47, 111, 152, 0.3);
+    outline-offset: -3px;
+}
+
 @media (max-width: 767.98px) {
     .academic-tab-shell {
         top: 70px;

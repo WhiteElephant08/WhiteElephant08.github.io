@@ -13,6 +13,13 @@
             </div>
             <span class="badge badge-light border no-break mt-1 ml-sm-3">{{ project.status }}</span>
         </div>
+        {% if project.image %}
+        <figure class="academic-project-figure">
+            <a href="{{ project.image | relative_url }}" target="_blank" rel="noopener" aria-label="View full-size project image">
+                <img src="{{ project.image | relative_url }}" alt="{{ project.image_alt }}" loading="lazy">
+            </a>
+        </figure>
+        {% endif %}
         <p class="mb-2">{{ project.summary }}</p>
         <ul class="small text-muted pl-3 mb-3">
             {% for contribution in project.contributions %}
