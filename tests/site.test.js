@@ -141,3 +141,21 @@ test('guide items are rendered as accessible disclosure controls', () => {
   assert.match(script, /guide-toggle/);
   assert.match(script, /guide-panel/);
 });
+
+test('README documents editing, publishing, updating, and rollback', () => {
+  const readme = read('README.md');
+  const headings = ['编辑个人内容', '发布 GitHub Pages', '更新网站', '回退修改', '来源与许可证'];
+
+  for (const heading of headings) {
+    assert.match(readme, new RegExp(`^## ${heading}$`, 'm'));
+  }
+  assert.match(readme, /GitHub Desktop/);
+  assert.match(readme, /WhiteElephant08\.github\.io/);
+});
+
+test('site declares a local favicon that exists', () => {
+  const html = read('index.html');
+
+  assert.match(html, /rel="icon"[^>]*href="assets\/img\/favicon\.svg"/);
+  assert.equal(fs.existsSync(path.join(root, 'assets/img/favicon.svg')), true);
+});
