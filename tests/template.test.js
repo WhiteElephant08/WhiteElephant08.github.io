@@ -109,6 +109,8 @@ test('publishes the DPTC planning-budget project with scoped development results
   assert.match(projects, /73\.3%/);
   assert.doesNotMatch(projects, /执行1、3或5步|同状态反事实分支|局部轨迹|固定策略退化|反事实数据不足|35\/64/);
   assert.doesNotMatch(projects, /普遍|显著优于|state-of-the-art|SOTA/i);
+  assert.match(projects, /image: \/assets\/images\/projects\/dptc-research-prototype\.png/);
+  assert.equal(fs.existsSync(path.join(root, 'assets/images/projects/dptc-research-prototype.png')), true);
 });
 
 test('removes public template demo pages and navigation', () => {

@@ -20,6 +20,8 @@
 - title: "DPTC: Adaptive Compute Allocation for Visual World-Model Control"
   title_zh: 视觉世界模型控制中的自适应规划计算研究
   status: Research Project
+  image: /assets/images/projects/dptc-research-prototype.png
+  image_alt: DPTC自适应规划预算、世界模型规划器、机器人执行与受控评价流程图
   summary: >-
     研究视觉世界模型控制中的计算预算分配问题，探索如何在闭环执行中减少不必要的规划开销，同时保持对任务状态变化的响应能力。
   contributions:
