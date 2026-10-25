@@ -42,6 +42,7 @@ test('about section describes confirmed interests and skills without mastery cla
   assert.match(profile, /Python/);
   assert.match(profile, /C\+\+/);
   assert.doesNotMatch(profile, /神经网络/);
+  assert.doesNotMatch(profile, /我目前|现阶段|开展过|仍在持续提升/);
   assert.doesNotMatch(profile, /精通|专家|proficient|expert/i);
   assert.doesNotMatch(profile, /个人主页预览/);
 });
