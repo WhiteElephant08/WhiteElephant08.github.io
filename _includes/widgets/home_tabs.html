@@ -1,0 +1,99 @@
+<div class="academic-tabs" data-academic-tabs>
+    <div class="academic-tab-shell shadow-sm" role="tablist" aria-label="Homepage sections">
+        <button class="academic-tab active" type="button" role="tab" aria-selected="true" aria-controls="panel-about" id="tab-about" data-tab="about">
+            <span class="academic-tab-icon" aria-hidden="true"><i class="fas fa-user"></i></span>
+            <span>About</span>
+        </button>
+        <button class="academic-tab" type="button" role="tab" aria-selected="false" aria-controls="panel-education" id="tab-education" data-tab="education" tabindex="-1">
+            <span class="academic-tab-icon" aria-hidden="true"><i class="fas fa-graduation-cap"></i></span>
+            <span>Education</span>
+        </button>
+        <button class="academic-tab" type="button" role="tab" aria-selected="false" aria-controls="panel-research" id="tab-research" data-tab="research" tabindex="-1">
+            <span class="academic-tab-icon" aria-hidden="true"><i class="fas fa-flask"></i></span>
+            <span>Research</span>
+        </button>
+        <button class="academic-tab" type="button" role="tab" aria-selected="false" aria-controls="panel-projects" id="tab-projects" data-tab="projects" tabindex="-1">
+            <span class="academic-tab-icon" aria-hidden="true"><i class="fas fa-diagram-project"></i></span>
+            <span>Projects</span>
+        </button>
+    </div>
+
+    <section class="academic-panel active" id="panel-about" role="tabpanel" aria-labelledby="tab-about" data-tab-panel="about">
+        <header class="academic-section-heading">
+            <p class="academic-eyebrow">PROFILE</p>
+            <h1>About Me</h1>
+        </header>
+        <div class="academic-surface academic-about-copy">
+            <div class="text-profile-bio">{{ site.data.profile.short_bio }}</div>
+            <div class="academic-divider"></div>
+            <p class="academic-supporting-copy">My work combines robot learning experiments with structured evaluation, with additional practice in object detection and model development using Python and PyTorch.</p>
+        </div>
+        <div class="academic-skill-row" aria-label="Technical background">
+            <span>Python</span>
+            <span>PyTorch</span>
+            <span>C++</span>
+            <span>YOLO</span>
+            <span>Simulation</span>
+        </div>
+    </section>
+
+    <section class="academic-panel" id="panel-education" role="tabpanel" aria-labelledby="tab-education" data-tab-panel="education" hidden>
+        <header class="academic-section-heading">
+            <p class="academic-eyebrow">BACKGROUND</p>
+            <h1>Education</h1>
+        </header>
+        <div class="academic-timeline">
+            {% for item in site.data.profile.education %}
+            <article class="academic-timeline-item academic-surface">
+                <div class="academic-timeline-date">{{ item.date }}</div>
+                <div>
+                    <h2>{{ item.name }}</h2>
+                    <p class="academic-degree">{{ item.position }}</p>
+                    <p class="academic-meta">{{ item.dept }}</p>
+                </div>
+            </article>
+            {% endfor %}
+        </div>
+
+        {% if site.data.profile.awards %}
+        <h2 class="academic-subheading">Honors &amp; Awards</h2>
+        <div class="academic-awards">
+            {% for item in site.data.profile.awards %}
+            <article class="academic-award academic-surface">
+                <span class="academic-award-icon" aria-hidden="true"><i class="fas fa-award"></i></span>
+                <div>
+                    <h3>{{ item.name }}</h3>
+                    {% if item.details %}<p>{{ item.details }}</p>{% endif %}
+                </div>
+            </article>
+            {% endfor %}
+        </div>
+        {% endif %}
+    </section>
+
+    <section class="academic-panel" id="panel-research" role="tabpanel" aria-labelledby="tab-research" data-tab-panel="research" hidden>
+        <header class="academic-section-heading">
+            <p class="academic-eyebrow">INTERESTS</p>
+            <h1>Research</h1>
+            <p>Research interests at the intersection of robot learning, multimodal policies, and visual perception.</p>
+        </header>
+        <div class="academic-research-grid">
+            {% for item in site.data.profile.research_interests %}
+            <article class="academic-research-card academic-surface">
+                <span class="academic-research-number">0{{ forloop.index }}</span>
+                <h2>{{ item.name }}</h2>
+                <p>{{ item.description }}</p>
+            </article>
+            {% endfor %}
+        </div>
+    </section>
+
+    <section class="academic-panel" id="panel-projects" role="tabpanel" aria-labelledby="tab-projects" data-tab-panel="projects" hidden>
+        <header class="academic-section-heading">
+            <p class="academic-eyebrow">SELECTED WORK</p>
+            <h1>Projects</h1>
+            <p>Research and engineering work in robot learning and simulation.</p>
+        </header>
+        {% include widgets/project_card.html hide_title=true %}
+    </section>
+</div>

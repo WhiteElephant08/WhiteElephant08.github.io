@@ -1,7 +1,9 @@
-<section class="my-3 p-0 bg-white shadow-sm rounded-xl" aria-labelledby="research-projects-title">
+<section class="my-3 p-0 bg-white shadow-sm rounded-xl" {% if include.hide_title %}aria-label="Research projects"{% else %}aria-labelledby="research-projects-title"{% endif %}>
+    {% unless include.hide_title %}
     <h6 id="research-projects-title" class="border-bottom border-gray p-3 mb-0">
         <i class="fas fa-diagram-project" aria-hidden="true"></i> Research Projects
     </h6>
+    {% endunless %}
     {% for project in site.data.projects %}
     <article class="p-4 {% unless forloop.last %}border-bottom border-gray{% endunless %}">
         <div class="d-flex flex-column flex-sm-row align-items-sm-start justify-content-between">

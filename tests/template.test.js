@@ -75,7 +75,23 @@ test('shows the confirmed VLA research project without publishing exact results'
   assert.match(projects, /受控对照/);
   assert.match(projects, /研究项目 · 论文稿件/);
   assert.doesNotMatch(projects, /70\.7|44\.0|58\.7|26\.7|106\/150|66\/150|88\/150|360,?000|450次/);
+  assert.match(homepage, /widgets\/home_tabs\.html/);
+});
+
+test('uses accessible hash-linked tabs for the main homepage sections', () => {
+  const homepage = read('_includes/widgets/home_tabs.html');
+  const script = read('assets/js/common.js');
+
+  for (const section of ['about', 'education', 'research', 'projects']) {
+    assert.match(homepage, new RegExp(`data-tab="${section}"`));
+    assert.match(homepage, new RegExp(`data-tab-panel="${section}"`));
+  }
+  assert.match(homepage, /role="tablist"/);
+  assert.match(homepage, /role="tabpanel"/);
   assert.match(homepage, /widgets\/project_card\.html/);
+  assert.match(script, /window\.location\.hash/);
+  assert.match(script, /ArrowLeft/);
+  assert.match(script, /ArrowRight/);
 });
 
 test('removes public template demo pages and navigation', () => {

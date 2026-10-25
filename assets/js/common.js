@@ -39,4 +39,49 @@ $(function () {
     $(".lazy").on("load", function () {
         $grid.masonry('layout');
     });
+
+    var tabs = Array.prototype.slice.call(document.querySelectorAll('[data-academic-tabs] [data-tab]'));
+    var panels = Array.prototype.slice.call(document.querySelectorAll('[data-academic-tabs] [data-tab-panel]'));
+
+    function showAcademicTab(id, updateHash) {
+        if (!panels.some(function (panel) { return panel.dataset.tabPanel === id; })) {
+            id = 'about';
+        }
+
+        tabs.forEach(function (tab) {
+            var selected = tab.dataset.tab === id;
+            tab.classList.toggle('active', selected);
+            tab.setAttribute('aria-selected', selected ? 'true' : 'false');
+            tab.setAttribute('tabindex', selected ? '0' : '-1');
+        });
+
+        panels.forEach(function (panel) {
+            var selected = panel.dataset.tabPanel === id;
+            panel.hidden = !selected;
+            panel.classList.toggle('active', selected);
+        });
+
+        if (updateHash && window.history.replaceState) {
+            window.history.replaceState(null, '', '#' + id);
+        }
+    }
+
+    tabs.forEach(function (tab, index) {
+        tab.addEventListener('click', function () {
+            showAcademicTab(tab.dataset.tab, true);
+        });
+
+        tab.addEventListener('keydown', function (event) {
+            if (event.key !== 'ArrowLeft' && event.key !== 'ArrowRight') return;
+            event.preventDefault();
+            var direction = event.key === 'ArrowRight' ? 1 : -1;
+            var nextIndex = (index + direction + tabs.length) % tabs.length;
+            tabs[nextIndex].focus();
+            showAcademicTab(tabs[nextIndex].dataset.tab, true);
+        });
+    });
+
+    if (tabs.length && panels.length) {
+        showAcademicTab(window.location.hash.slice(1) || 'about', false);
+    }
 })

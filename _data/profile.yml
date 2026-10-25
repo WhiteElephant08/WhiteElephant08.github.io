@@ -31,3 +31,11 @@ education:
 awards:
 - name: The 19th Advanced Robotics and Simulation Technology Competition
   details: National Third Prize · Provincial Second Prize
+
+research_interests:
+- name: Robot Learning
+  description: Learning-based methods for improving robot policies through structured training and evaluation.
+- name: Vision-Language-Action Models
+  description: Multimodal robot policies that connect visual observations, language instructions, and actions.
+- name: Computer Vision
+  description: Visual perception and object detection for robotic systems, including practical work with YOLO.
