@@ -1,85 +1,101 @@
-# WhiteElephant08.github.io
+# academic-homepage
 
-这是 `WhiteElephant08` 的个人 GitHub Pages 主页框架。第一版先建立稳定的视觉、栏目和编辑方式，所有尚未确认的经历都明确标记为“待补充”，不会使用无法验证的能力描述。
+> 本仓库正在为 WhiteElephant08 配置。当前分支保留上游模板的完整结构，个人经历、项目与论文内容尚未填写。模板来源与 MIT 许可证见下文。
 
-网站采用静态 HTML、CSS 和 JavaScript，不需要安装 Ruby、Jekyll、Node.js 或数据库。直接打开 `index.html` 即可阅读，使用本地服务器预览时交互更接近 GitHub Pages。
+[![Preview](assets/images/etc/preview.png)](https://luost26.github.io/academic-homepage/)
 
-## 文件结构
+[![pages-build-deployment](https://github.com/luost26/academic-homepage/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/luost26/academic-homepage/actions/workflows/pages/pages-build-deployment)
+[![Hits](https://hits.sh/github.com/luost26/academic-homepage.svg?view=today-total)](https://hits.sh/github.com/luost26/academic-homepage/)
+[![GitHub stars](https://img.shields.io/github/stars/luost26/academic-homepage)](https://github.com/luost26/academic-homepage)
+[![GitHub forks](https://img.shields.io/github/forks/luost26/academic-homepage)](https://github.com/luost26/academic-homepage/forks)
+<!--[![W3C Validation](https://img.shields.io/w3c-validation/html?targetUrl=https%3A%2F%2Fluost26.github.io%2Facademic-homepage)](https://validator.nu/?doc=https%3A%2F%2Fluost26.github.io%2Facademic-homepage)-->
 
-```text
-index.html             页面结构与无 JavaScript 时的基础内容
-assets/css/site.css    颜色、排版、响应式布局
-assets/js/content.js   个人介绍、关注方向、项目和 GitHub 教程内容
-assets/js/app.js       渲染、主题、导航和教程展开交互
-tests/site.test.js     结构与内容完整性检查
-LICENSE                上游 Minimal Light 的 CC0 许可证
-```
+A GitHub Pages (Jekyll) template for personal academic website. Click [here](https://luost26.github.io/academic-homepage/) to see the demo.
 
-## 编辑个人内容
+## Variants
 
-日常更新主要编辑 `assets/js/content.js`：
+Explore alternative visual styles in their own repositories.
 
-- `profile`：用户名、定位、个人介绍、头像和 GitHub 链接。
-- `focus`：目前关注或正在学习的问题。
-- `projects`：项目、数据资源和学习记录。
-- `githubGuide`：GitHub 使用手册。
+| Variant | Style | Preview | Links |
+| --- | --- | --- | --- |
+| Frutiger Aero | Vista-inspired frosted glass, glossy icons, and nature imagery. | <img src="assets/images/variants/frutiger-aero.jpg" alt="Frutiger Aero homepage screenshot" width="320"> | [Repository](https://github.com/luost26/academic-homepage-frutiger-aero) · [Live demo](https://luost26.github.io/academic-homepage-frutiger-aero/) |
+| Nostalgia 1990s | Windows 95/98-style silver bevels, native classic icons, and pixel-grid typography. | <img src="assets/images/variants/nostalgia-1990s.jpg" alt="Nostalgia 1990s homepage screenshot" width="320"> | [Repository](https://github.com/luost26/academic-homepage-nostalgia-1990s) · [Live demo](https://luost26.github.io/academic-homepage-nostalgia-1990s/) |
 
-在经历尚未确认时，继续使用“待补充”“持续更新”“正在学习”等表述。不要先写“精通”“专家”或无法提供来源的成绩数字。
+## User Community
 
-修改视觉时编辑 `assets/css/site.css`；修改页面结构时编辑 `index.html`；修改主题切换或教程展开行为时编辑 `assets/js/app.js`。
+[🏡](https://luost.me/)
+[:star:](https://cch1999.github.io/)
+[:star:](https://kyrrego.github.io/)
+[:star:](https://ced3-han.github.io/)
+[:star:](https://lihengchen.com/)
+[:star:](https://hpwang-whu.github.io/)
+[:star:](https://zhang-yingyi.github.io/)
+[:star:](https://wby24.github.io/)
+[:star:](https://pengfeixu.com/)
+[:star:](https://boqiuphd.github.io/)
+[:star:](https://www.huabing.li/)
+[:star:](https://xiecuiying.github.io/)
+[:star:](https://hannyang.github.io/)
+[:star:](https://king-play.github.io/)
+[🤖](https://andrewcwlee.github.io)
+[:star:](https://laiyao1.github.io)
+[🌜](https://tmsultan.github.io)
+[🚀](https://zaxguo.github.io)
+[:gemini:](https://hongyang-du.github.io)
+[:star:](https://thuanz123.github.io)
+[🧬](https://gdalba.github.io/)
+[:star:](https://yhhan.com/)
+[🌔](https://chen-huaneng.github.io/academic)
+[:star:](https://jwklee.github.io/)
+[😼](https://onethousandwu.com/)
+[🔬](https://kwen-chen.github.io/)
+[🧑‍🔬](https://shengxiang-lin.github.io/)
+[🗣️](https://henry-h22.github.io/)
+[🍠](https://xingyuliuxyl.com/)
+[:star:](https://melanthera-biflora.github.io/)
 
-## GitHub Desktop 工作流
+:hugs: Feel free to tell us if you are using this template for your website by creating an issue [here](https://github.com/luost26/academic-homepage/issues/new?assignees=&labels=&projects=&template=user-report.md&title=I+am+using+this+template%21).
 
-1. 在 GitHub Desktop 中选择仓库。
-2. 点击 **Fetch origin** 检查远程变化。
-3. 较大修改使用 **Current branch → New branch** 创建短期分支。
-4. 修改文件后，在 **Changes** 中逐项检查差异。
-5. 在左下角填写本次修改目的，点击 **Commit to ...**。
-6. 点击 **Push origin** 上传提交。
-7. 重要修改可以创建 Pull Request，确认后合并回 `main`。
+### Acknowledgements
 
-只改一两句话时可以直接在 `main` 提交；新栏目、视觉重做和实验性功能优先使用分支。
+The improvements of this template have been inspired by the customizations and feedbacks from the following users:
+- 😼 [onethousandwu.com](https://onethousandwu.com/): increased corner radius [[Repo]](https://github.com/oneThousand1000/oneThousand1000.github.io)
+- :star: [shiwonkim.github.io](https://shiwonkim.github.io/): two-column main page layout [[Repo]](https://github.com/shiwonkim/shiwonkim.github.io)
+- :star: [yqxie99.github.io](https://yqxie99.github.io/): blog feature [[Repo]](https://github.com/YQXie99/YQXie99.github.io/tree/feat/add_blog_page)
+- :star: [kwen-chen.github.io](https://kwen-chen.github.io/): blog feature [[Repo]](https://github.com/Kwen-Chen/Kwen-Chen.github.io)
 
-## 发布 GitHub Pages
+## Need Help?
 
-1. 在 GitHub 创建公开仓库 `WhiteElephant08.github.io`。
-2. 将本地仓库的远程地址改为新仓库地址。
-3. 把完成版本合并到 `main` 并 Push。
-4. 打开仓库 **Settings → Pages**。
-5. 在 **Build and deployment** 中选择 **Deploy from a branch**。
-6. 选择 `main` 和根目录 `/ (root)`，保存。
-7. 等待部署完成后访问 `https://whiteelephant08.github.io`。
+If you run into **any** issues while using this template, or have suggestions for improvements, please don't hesitate to create an issue [here](https://github.com/luost26/academic-homepage/issues/new).
 
-仓库根目录包含 `.nojekyll`，GitHub Pages 会把这些静态文件直接发布，不运行 Jekyll。
+### FAQs
 
-## 更新网站
+- [Need blogging feature?](https://github.com/luost26/academic-homepage/issues/13#issuecomment-2646371324)
+- [How to show citation count for papers?](https://github.com/luost26/academic-homepage/issues/29#issuecomment-3222496187)
 
-每次更新都遵循“修改 → 检查 → Commit → Push”。Push 到用于 Pages 的 `main` 分支后，GitHub 会自动重新部署网站。
 
-提交信息应说明目的，例如：
+## Getting Started
 
-```text
-docs: add verified education details
-feat: add dataset resource section
-fix: prevent mobile navigation overflow
-```
+1. First, click the "Use this template" button to create a new repository. The name of the repository should be `<your-github-username>.github.io` (click [here](https://docs.github.com/en/pages/getting-started-with-github-pages/about-github-pages#types-of-github-pages-sites) to learn more about naming a GitHub Pages repository).
 
-提交前运行：
+### Running Locally (Debug & Preview)
 
-```powershell
-node --test tests/site.test.js
-node --check assets/js/content.js
-node --check assets/js/app.js
-```
+2. Follow the **step 1** and **step 2** of the instruction [here](https://jekyllrb.com/docs/) to install prerequisites and jekyll.
 
-## 回退修改
+3. Clone your forked repository to your local machine.
 
-Git 的每个 Commit 都是保存点。在 GitHub Desktop 中打开 **History**，找到需要撤销的提交，右键选择 **Revert changes in commit**，GitHub Desktop 会创建一个新的反向提交，不会粗暴删除后续历史。
+4. Run the following command in the root directory of the repository:
 
-如果只是还没有 Commit 的本地修改，可以在 **Changes** 中右键对应文件并选择 **Discard changes**。这个动作无法通过 Git 恢复，操作前必须确认文件确实不要了。
+   ```bash
+   bundle exec jekyll serve
+   ```
 
-## 来源与许可证
+5. Browse to the displayed URL to see the website.
 
-本项目以 [yaoyao-liu/minimal-light](https://github.com/yaoyao-liu/minimal-light) 的静态 HTML 版本为起点，重新设计了页面结构、视觉系统和交互教程。上游项目采用 CC0 1.0 Universal，许可证全文保留在 `LICENSE`。
 
-后续加入的个人文字、照片和项目材料仍分别受其原作者权利约束，不应因为代码仓库使用 CC0 就默认可以重新使用个人身份材料。
+### Deploying to GitHub Pages
+
+2. Go to the repository settings and enable GitHub Pages. Detailed instructions can be found [here](https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site#creating-your-site).
+
+3. Navigate to your created website, and follow the instructions displayed on the homepage (if any) to finalize the setup.
+
