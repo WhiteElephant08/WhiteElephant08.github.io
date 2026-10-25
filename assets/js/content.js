@@ -3,7 +3,8 @@ window.SITE_CONTENT = {
     handle: "WhiteElephant08",
     role: "正在建立自己的研究与创作档案",
     introduction: "这里会记录我正在关注的问题、做过的实践，以及能够公开分享的项目、数据资源和学习过程。",
-    github: "https://github.com/WhiteElephant08"
+    github: "https://github.com/WhiteElephant08",
+    avatar: "https://avatars.githubusercontent.com/u/206431951?v=4"
   },
   focus: [
     { title: "研究与问题", text: "记录真正投入过时间的问题，并逐步补充背景和成果。" },

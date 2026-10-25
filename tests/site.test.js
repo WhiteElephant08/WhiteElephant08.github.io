@@ -68,3 +68,40 @@ test('application script publishes the PersonalSite interface', () => {
   assert.match(script, /setTheme/);
   assert.match(script, /showSection/);
 });
+
+test('homepage provides a profile image with an explicit fallback path', () => {
+  const html = read('index.html');
+  const script = read('assets/js/app.js');
+
+  assert.match(html, /id="profile-image"/);
+  assert.match(html, /id="avatar-fallback"/);
+  assert.match(script, /activateAvatarFallback/);
+  assert.match(script, /addEventListener\("error"/);
+});
+
+test('landmarks remain in the expected reading order', () => {
+  const html = read('index.html');
+  const orderedIds = ['about', 'work', 'github-guide', 'contact'];
+  let previous = -1;
+
+  for (const id of orderedIds) {
+    const position = html.indexOf(`id="${id}"`);
+    assert.ok(position > previous, `${id} should follow the previous section`);
+    previous = position;
+  }
+});
+
+test('theme control exposes state to assistive technology', () => {
+  const html = read('index.html');
+  const script = read('assets/js/app.js');
+
+  assert.match(html, /id="theme-toggle"[^>]*aria-pressed="false"/);
+  assert.match(script, /setAttribute\("aria-pressed"/);
+});
+
+test('unverified work is visibly marked as provisional', () => {
+  const content = loadContent();
+
+  assert.ok(content.projects.length >= 3);
+  assert.ok(content.projects.every((project) => ['待补充', '持续更新'].includes(project.status)));
+});

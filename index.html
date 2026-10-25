@@ -10,54 +10,88 @@
 <body>
   <a class="skip-link" href="#main-content">跳到主要内容</a>
   <header class="site-header">
-    <a class="brand" href="#about" aria-label="返回个人介绍">WhiteElephant08</a>
-    <nav aria-label="主导航">
-      <a href="#about" data-nav="about">关于</a>
-      <a href="#work" data-nav="work">作品</a>
-      <a href="#github-guide" data-nav="github-guide">GitHub 手册</a>
-      <a href="#contact" data-nav="contact">联系</a>
-    </nav>
-    <button id="theme-toggle" type="button" aria-label="切换深浅色主题">主题</button>
+    <div class="header-inner">
+      <a class="brand" href="#about" aria-label="返回个人介绍"><span class="brand-mark">W</span><span>WhiteElephant08</span></a>
+      <nav aria-label="主导航">
+        <a href="#about" data-nav="about">关于</a>
+        <a href="#work" data-nav="work">作品</a>
+        <a href="#github-guide" data-nav="github-guide">GitHub 手册</a>
+        <a href="#contact" data-nav="contact">联系</a>
+      </nav>
+      <button id="theme-toggle" type="button" aria-label="切换深浅色主题" aria-pressed="false"><span aria-hidden="true">◐</span><span id="theme-label">深色</span></button>
+    </div>
   </header>
 
   <main id="main-content">
     <section class="hero" id="about" data-section="about">
-      <div class="avatar-fallback" aria-hidden="true">W</div>
-      <div>
-        <p class="eyebrow">Personal workspace</p>
-        <h1>WhiteElephant08</h1>
-        <p id="profile-role" class="role">正在建立自己的研究与创作档案</p>
-        <p id="profile-introduction">这里会记录我正在关注的问题、做过的实践，以及能够公开分享的项目和数据资源。</p>
-        <a class="primary-link" href="https://github.com/WhiteElephant08">查看 GitHub</a>
+      <div class="hero-inner">
+        <div class="profile-visual">
+          <img id="profile-image" src="https://avatars.githubusercontent.com/u/206431951?v=4" alt="WhiteElephant08 的 GitHub 头像" width="320" height="320">
+          <div id="avatar-fallback" class="avatar-fallback" aria-hidden="true" hidden>W</div>
+          <span class="availability">持续整理中</span>
+        </div>
+        <div class="hero-copy">
+          <p class="eyebrow">Personal research &amp; digital archive</p>
+          <h1>WhiteElephant08</h1>
+          <p id="profile-role" class="role">正在建立自己的研究与创作档案</p>
+          <p id="profile-introduction" class="hero-introduction">这里会记录我正在关注的问题、做过的实践，以及能够公开分享的项目和数据资源。</p>
+          <div class="hero-actions">
+            <a class="button primary" href="https://github.com/WhiteElephant08">GitHub 主页 <span aria-hidden="true">↗</span></a>
+            <a class="button secondary" href="#github-guide">查看使用手册</a>
+          </div>
+          <dl class="hero-meta">
+            <div><dt>定位</dt><dd>成长型个人主页</dd></div>
+            <div><dt>内容</dt><dd>项目 · 数据 · 学习记录</dd></div>
+            <div><dt>状态</dt><dd>框架已建立</dd></div>
+          </dl>
+        </div>
       </div>
     </section>
 
-    <section class="section" aria-labelledby="focus-heading">
-      <h2 id="focus-heading">目前关注</h2>
-      <div id="focus-list" class="grid"></div>
+    <section class="section focus-band" aria-labelledby="focus-heading">
+      <div class="section-inner">
+        <header class="section-heading">
+          <p class="section-number">01</p>
+          <div><h2 id="focus-heading">目前关注</h2><p>先记录问题和行动，再逐渐形成稳定的专业方向。</p></div>
+        </header>
+        <div id="focus-list" class="grid"></div>
+      </div>
     </section>
 
     <section class="section" id="work" data-section="work" aria-labelledby="work-heading">
-      <h2 id="work-heading">项目与资源</h2>
-      <p>先建立结构，再逐项填入经过确认的作品、数据和记录。</p>
-      <div id="project-list" class="grid"></div>
+      <div class="section-inner">
+        <header class="section-heading">
+          <p class="section-number">02</p>
+          <div><h2 id="work-heading">项目与资源</h2><p>先建立结构，再逐项填入经过确认的作品、数据和记录。</p></div>
+        </header>
+        <div id="project-list" class="grid project-grid"></div>
+      </div>
     </section>
 
     <section class="section" id="github-guide" data-section="github-guide" aria-labelledby="guide-heading">
-      <h2 id="guide-heading">GitHub 使用手册</h2>
-      <p>从本地文件到公开网页，理解最常用的概念和操作。</p>
-      <div id="guide-list" class="guide-list"></div>
+      <div class="section-inner">
+        <header class="section-heading">
+          <p class="section-number">03</p>
+          <div><h2 id="guide-heading">GitHub 使用手册</h2><p>从本地文件到公开网页，理解最常用的概念和操作。</p></div>
+        </header>
+        <div class="workflow" aria-label="GitHub Pages 发布流程">
+          <span>本地文件</span><i aria-hidden="true">→</i><span>Commit</span><i aria-hidden="true">→</i><span>Push</span><i aria-hidden="true">→</i><span>GitHub</span><i aria-hidden="true">→</i><span>Pages</span>
+        </div>
+        <div id="guide-list" class="guide-list"></div>
+      </div>
     </section>
 
-    <section class="section" id="contact" data-section="contact" aria-labelledby="contact-heading">
-      <h2 id="contact-heading">联系与更新</h2>
-      <p>内容仍在整理中，当前可以通过 GitHub 查看公开动态。</p>
-      <a href="https://github.com/WhiteElephant08">github.com/WhiteElephant08</a>
+    <section class="section contact-band" id="contact" data-section="contact" aria-labelledby="contact-heading">
+      <div class="section-inner contact-inner">
+        <div><p class="section-number">04</p><h2 id="contact-heading">联系与更新</h2><p>内容仍在整理中，当前可以通过 GitHub 查看公开动态。</p></div>
+        <a class="button primary" href="https://github.com/WhiteElephant08">访问 GitHub <span aria-hidden="true">↗</span></a>
+      </div>
     </section>
   </main>
 
-  <footer>
-    <p>基于 CC0 开源项目 Minimal Light 改造。</p>
+  <footer class="site-footer">
+    <div><strong>WhiteElephant08</strong><p>个人主页框架 · 2026</p></div>
+    <p>基于 CC0 开源项目 <a href="https://github.com/yaoyao-liu/minimal-light">Minimal Light</a> 改造。</p>
   </footer>
 
   <noscript>本页面在关闭 JavaScript 时仍可阅读主要介绍；项目列表和交互式教程需要启用 JavaScript。</noscript>
