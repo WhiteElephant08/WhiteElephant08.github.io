@@ -24,6 +24,15 @@ test('uses the owner identity and user-site base URL', () => {
   assert.match(config, /^baseurl: ""/m);
 });
 
+test('publishes the confirmed education details without inventing dates or degree level', () => {
+  const profile = read('_data/profile.yml');
+
+  assert.match(profile, /Northeastern University \(China\)/);
+  assert.match(profile, /College of Robot Science and Engineering/);
+  assert.match(profile, /position: Robotics Engineering/);
+  assert.match(profile, /date: Pending/);
+});
+
 test('does not present template publications or news on the homepage', () => {
   const display = read('_data/display.yml');
 
