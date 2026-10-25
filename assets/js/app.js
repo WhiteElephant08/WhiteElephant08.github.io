@@ -14,9 +14,23 @@
     document.getElementById("profile-introduction").textContent = content.profile.introduction;
     document.getElementById("focus-list").innerHTML = content.focus.map(card).join("");
     document.getElementById("project-list").innerHTML = content.projects.map(card).join("");
-    document.getElementById("guide-list").innerHTML = content.githubGuide.topics.map(function (topic) {
-      return '<article class="guide-item"><h3>' + topic.name + '</h3><p>' + topic.summary + '</p></article>';
+    document.getElementById("guide-list").innerHTML = content.githubGuide.topics.map(function (topic, index) {
+      var panelId = "guide-panel-" + index;
+      return '<article class="guide-item"><button class="guide-toggle" type="button" aria-expanded="false" aria-controls="' + panelId + '">' +
+        '<span><strong>' + topic.name + '</strong><small>' + topic.summary + '</small></span><span class="guide-symbol" aria-hidden="true">+</span></button>' +
+        '<div class="guide-panel" id="' + panelId + '" hidden><p>' + topic.detail + '</p></div></article>';
     }).join("");
+    document.getElementById("desktop-steps").innerHTML = content.githubGuide.desktopSteps.map(function (step) { return "<li>" + step + "</li>"; }).join("");
+    document.getElementById("package-note").textContent = content.githubGuide.packageNote;
+    document.getElementById("data-note").textContent = content.githubGuide.dataNote;
+  }
+
+  function toggleGuideItem(button) {
+    var panel = document.getElementById(button.getAttribute("aria-controls"));
+    var expanded = button.getAttribute("aria-expanded") === "true";
+    button.setAttribute("aria-expanded", expanded ? "false" : "true");
+    button.querySelector(".guide-symbol").textContent = expanded ? "+" : "−";
+    panel.hidden = expanded;
   }
 
   function activateAvatarFallback() {
@@ -51,6 +65,10 @@
     document.getElementById("theme-toggle").addEventListener("click", function () {
       setTheme(document.documentElement.dataset.theme === "dark" ? "light" : "dark");
     });
+    document.getElementById("guide-list").addEventListener("click", function (event) {
+      var button = event.target.closest(".guide-toggle");
+      if (button) { toggleGuideItem(button); }
+    });
     document.querySelectorAll("[data-nav]").forEach(function (link) {
       link.addEventListener("click", function (event) {
         event.preventDefault();
@@ -72,6 +90,6 @@
     }
   }
 
-  window.PersonalSite = { renderSite: renderSite, setTheme: setTheme, showSection: showSection, activateAvatarFallback: activateAvatarFallback };
+  window.PersonalSite = { renderSite: renderSite, setTheme: setTheme, showSection: showSection, activateAvatarFallback: activateAvatarFallback, toggleGuideItem: toggleGuideItem };
   document.addEventListener("DOMContentLoaded", initialize);
 }());

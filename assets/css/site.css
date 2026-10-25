@@ -107,9 +107,23 @@ h1 { margin: 0; font-family: Georgia, "Times New Roman", serif; font-size: clamp
 .workflow { display: grid; grid-template-columns: repeat(9, auto); align-items: center; justify-content: center; gap: .65rem; margin: 0 0 2rem; padding: 1.1rem; border: 1px solid var(--line); background: var(--surface); overflow-x: auto; }
 .workflow span { padding: .45rem .65rem; border: 1px solid var(--line); background: var(--background); font-size: .8rem; font-weight: 750; white-space: nowrap; }
 .workflow i { color: var(--teal); font-style: normal; }
-.guide-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .75rem; }
-.guide-item { border: 1px solid var(--line); border-radius: 6px; background: var(--surface); padding: 1rem 1.15rem; }
-.guide-item h3 { color: var(--blue); }
+.guide-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .75rem; align-items: start; }
+.guide-item { border: 1px solid var(--line); border-radius: 6px; background: var(--surface); overflow: hidden; }
+.guide-toggle { width: 100%; min-height: 86px; display: flex; align-items: center; justify-content: space-between; gap: 1rem; border: 0; background: transparent; color: var(--text); padding: 1rem 1.15rem; text-align: left; cursor: pointer; }
+.guide-toggle strong, .guide-toggle small { display: block; }
+.guide-toggle strong { color: var(--blue); font-size: 1rem; }
+.guide-toggle small { margin-top: .25rem; color: var(--muted); font-size: .82rem; line-height: 1.5; }
+.guide-symbol { flex: 0 0 auto; color: var(--teal); font-size: 1.45rem; }
+.guide-panel { border-top: 1px solid var(--line); padding: .9rem 1.15rem 1.05rem; }
+.guide-panel p { margin: 0; color: var(--muted); font-size: .88rem; }
+.guide-practice { display: grid; grid-template-columns: 1.15fr .85fr; gap: 1rem; margin-top: 1.25rem; }
+.guide-practice section { border-top: 3px solid var(--yellow); background: var(--surface); padding: 1.25rem; }
+.guide-practice section:last-child { border-top-color: var(--blue); }
+.guide-practice h3 { margin: 0 0 .75rem; font-size: 1rem; }
+.guide-practice ol { margin: 0; padding-left: 1.25rem; color: var(--muted); font-size: .88rem; }
+.guide-practice li + li { margin-top: .45rem; }
+.guide-practice p { margin: 0; color: var(--muted); font-size: .88rem; }
+.guide-practice p + p { margin-top: .8rem; padding-top: .8rem; border-top: 1px solid var(--line); }
 
 .contact-band { background: var(--surface); }
 .contact-inner { display: flex; align-items: center; justify-content: space-between; gap: 2rem; }
@@ -140,7 +154,7 @@ h1 { margin: 0; font-family: Georgia, "Times New Roman", serif; font-size: clamp
   .section { padding: 4rem 0; }
   .section-heading { grid-template-columns: 42px minmax(0, 1fr); gap: .75rem; }
   .section-heading h2, .contact-inner h2 { font-size: 1.8rem; }
-  .grid, .guide-list { grid-template-columns: 1fr; }
+  .grid, .guide-list, .guide-practice { grid-template-columns: 1fr; }
   .project-grid .card:last-child { grid-column: auto; }
   .workflow { justify-content: start; }
   .contact-inner, .site-footer { align-items: flex-start; flex-direction: column; }

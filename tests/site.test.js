@@ -105,3 +105,39 @@ test('unverified work is visibly marked as provisional', () => {
   assert.ok(content.projects.length >= 3);
   assert.ok(content.projects.every((project) => ['待补充', '持续更新'].includes(project.status)));
 });
+
+test('GitHub guide covers the everyday concepts requested by the owner', () => {
+  const content = loadContent();
+  const names = content.githubGuide.topics.map((topic) => topic.name);
+  const required = [
+    'Repository', 'README', 'Commit', 'Branch', 'Fetch / Pull', 'Push',
+    'Merge / Pull Request', 'Issue', 'Release / Tag', 'GitHub Pages',
+    '.gitignore', 'Packages / Data',
+  ];
+
+  for (const name of required) {
+    assert.ok(names.includes(name), `${name} should be documented`);
+  }
+  assert.ok(content.githubGuide.topics.every((topic) => topic.detail.length > 35));
+});
+
+test('guide explains the full local-to-Pages workflow and Desktop routine', () => {
+  const guide = loadContent().githubGuide;
+
+  assert.deepEqual(
+    Array.from(guide.workflow),
+    ['本地文件', 'Commit', 'Push', 'GitHub 仓库', 'GitHub Pages'],
+  );
+  assert.ok(guide.desktopSteps.length >= 7);
+  assert.match(guide.packageNote, /npm|pip|Conda/);
+  assert.match(guide.dataNote, /网盘|Hugging Face|Zenodo/);
+});
+
+test('guide items are rendered as accessible disclosure controls', () => {
+  const script = read('assets/js/app.js');
+
+  assert.match(script, /toggleGuideItem/);
+  assert.match(script, /aria-expanded/);
+  assert.match(script, /guide-toggle/);
+  assert.match(script, /guide-panel/);
+});
