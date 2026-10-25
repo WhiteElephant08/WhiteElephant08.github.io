@@ -1,0 +1,16 @@
+- title: Failure-Guided Continuation Learning for Vision-Language-Action Policies
+  title_zh: 面向视觉-语言-动作策略的失败诊断与针对性继续训练
+  status: 研究项目 · 论文稿件
+  summary: >-
+    面向VLA机器人策略在多步骤操作中的执行失败，研究如何将阶段化失败诊断转化为继续训练的数据分配信号。项目在LIBERO仿真环境中开展，覆盖π0与SmolVLA相关训练和评估流程，并通过受控对照区分针对性诊断与一般重采样的影响。
+  contributions:
+    - 构建阶段化失败分析与专家示范窗口重加权流程。
+    - 搭建VLA继续训练、共享场景评估和受控对照实验。
+    - 建立实际抽样、来源模型、检查点和逐回合结果的追溯记录。
+  tags:
+    - Vision-Language-Action
+    - Robot Learning
+    - LIBERO
+    - π0 / SmolVLA
+    - Python
+    - Experimental Design

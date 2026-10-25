@@ -39,3 +39,17 @@ test('does not present template publications or news on the homepage', () => {
   assert.match(display, /show_news: false/);
   assert.match(display, /show_selected_publications: false/);
 });
+
+test('shows the confirmed VLA research project without publishing exact results', () => {
+  const projects = read('_data/projects.yml');
+  const homepage = read('index.html');
+
+  assert.match(projects, /Failure-Guided Continuation Learning/);
+  assert.match(projects, /LIBERO/);
+  assert.match(projects, /π0 \/ SmolVLA/);
+  assert.match(projects, /阶段化失败分析/);
+  assert.match(projects, /受控对照/);
+  assert.match(projects, /研究项目 · 论文稿件/);
+  assert.doesNotMatch(projects, /70\.7|44\.0|58\.7|26\.7|106\/150|66\/150|88\/150|360,?000|450次/);
+  assert.match(homepage, /widgets\/project_card\.html/);
+});
