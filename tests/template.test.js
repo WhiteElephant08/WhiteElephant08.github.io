@@ -28,9 +28,28 @@ test('publishes the confirmed education details without inventing dates or degre
   const profile = read('_data/profile.yml');
 
   assert.match(profile, /Northeastern University \(China\)/);
-  assert.match(profile, /College of Robot Science and Engineering/);
+  assert.match(profile, /Faculty of Robot Science and Engineering/);
   assert.match(profile, /position: Robotics Engineering/);
-  assert.match(profile, /date: Pending/);
+  assert.doesNotMatch(profile, /Education entry pending|date: Pending/);
+});
+
+test('about section describes confirmed interests and skills without mastery claims', () => {
+  const profile = read('_data/profile.yml');
+
+  assert.match(profile, /机器人学习/);
+  assert.match(profile, /YOLO/);
+  assert.match(profile, /PyTorch/);
+  assert.match(profile, /Python/);
+  assert.match(profile, /C\+\+/);
+  assert.doesNotMatch(profile, /精通|专家|proficient|expert/i);
+  assert.doesNotMatch(profile, /个人主页预览/);
+});
+
+test('publishes the confirmed robotics competition awards', () => {
+  const profile = read('_data/profile.yml');
+
+  assert.match(profile, /The 19th Advanced Robotics and Simulation Technology Competition - National Third Prize/);
+  assert.match(profile, /The 19th Advanced Robotics and Simulation Technology Competition - Provincial Second Prize/);
 });
 
 test('does not present template publications or news on the homepage', () => {
@@ -52,4 +71,14 @@ test('shows the confirmed VLA research project without publishing exact results'
   assert.match(projects, /研究项目 · 论文稿件/);
   assert.doesNotMatch(projects, /70\.7|44\.0|58\.7|26\.7|106\/150|66\/150|88\/150|360,?000|450次/);
   assert.match(homepage, /widgets\/project_card\.html/);
+});
+
+test('removes public template demo pages and navigation', () => {
+  const navigation = read('_data/navigation.yml');
+  const removed = ['showcase.html', 'blog.html', 'publications.html', 'index_layout2.html'];
+
+  assert.doesNotMatch(navigation, /Showcase|Blog|Publications|Layout 2/);
+  for (const file of removed) {
+    assert.equal(fs.existsSync(path.join(root, file)), false, `${file} should not be public`);
+  }
 });

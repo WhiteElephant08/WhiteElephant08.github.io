@@ -3,8 +3,8 @@ secondary_name: ""
 navbar_name: "WhiteElephant08"
 
 positions:
-- name: Personal homepage in progress
-- name: Projects · Data · Learning notes
+- name: Robotics Engineering Student
+- name: Robot Learning · Computer Vision
 
 # cv_link: link-to-your-cv-file
 github: WhiteElephant08
@@ -14,10 +14,13 @@ github: WhiteElephant08
 short_bio_text_justify: false
 short_bio: >-
   <p>
-    这是使用开源 <strong>academic-homepage</strong> 模板搭建的个人主页预览。
+    我目前就读于东北大学机器人科学与工程学院机器人工程专业，关注机器人学习、视觉语言动作模型与计算机视觉，希望将模型训练、仿真评估和可核验的实验设计结合起来。
   </p>
   <p>
-    个人介绍、教育经历、项目、论文和公开数据将在确认后逐项补充；当前内容不代表虚构的学历或技能声明。
+    我的研究实践包括VLA策略继续训练与失败分析，也做过基于YOLO的目标检测相关实践，并学习和使用过神经网络与PyTorch完成模型训练、数据处理和实验验证。
+  </p>
+  <p>
+    我具备Python和C++编程基础，目前主要使用Python开展实验；对PyTorch已有实际使用经验，并在持续提高工程实现与训练调试能力。
   </p>
 
 portrait_url: /assets/images/photos/portrait.jpg
@@ -26,16 +29,9 @@ portrait_caption: >-
 
 education:
 - name: Northeastern University (China)
-  dept: College of Robot Science and Engineering
+  dept: Faculty of Robot Science and Engineering
   position: Robotics Engineering
-  date: Pending
-
-# experience:
-# - name: Peking University
-#   logo: /assets/images/badges/PKU_red.png
-#   position: Research Intern
-#   date: Sep. 2019 - Jul. 2021
 
 awards:
-- name: Honors, competitions or milestones to be added
-  date: Pending
+- name: The 19th Advanced Robotics and Simulation Technology Competition - National Third Prize
+- name: The 19th Advanced Robotics and Simulation Technology Competition - Provincial Second Prize
