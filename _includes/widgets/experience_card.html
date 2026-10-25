@@ -61,8 +61,13 @@
                                 {% for item in site.data.profile.awards %}
                                 <li>
                                     <div class="d-flex">
-                                        <div>{{ item.name }}</div>
+                                        <div>
+                                            <div>{{ item.name }}</div>
+                                            {% if item.details %}<div class="small text-muted">{{ item.details }}</div>{% endif %}
+                                        </div>
+                                        {% if item.date %}
                                         <div class="ml-auto mt-auto no-break"><em>{{ item.date }}</em></div>
+                                        {% endif %}
                                     </div>
                                 </li>
                                 {% endfor %}

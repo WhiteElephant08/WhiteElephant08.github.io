@@ -41,6 +41,7 @@ test('about section describes confirmed interests and skills without mastery cla
   assert.match(profile, /PyTorch/);
   assert.match(profile, /Python/);
   assert.match(profile, /C\+\+/);
+  assert.doesNotMatch(profile, /神经网络/);
   assert.doesNotMatch(profile, /精通|专家|proficient|expert/i);
   assert.doesNotMatch(profile, /个人主页预览/);
 });
@@ -48,8 +49,8 @@ test('about section describes confirmed interests and skills without mastery cla
 test('publishes the confirmed robotics competition awards', () => {
   const profile = read('_data/profile.yml');
 
-  assert.match(profile, /The 19th Advanced Robotics and Simulation Technology Competition - National Third Prize/);
-  assert.match(profile, /The 19th Advanced Robotics and Simulation Technology Competition - Provincial Second Prize/);
+  assert.match(profile, /The 19th Advanced Robotics and Simulation Technology Competition/);
+  assert.match(profile, /details: National Third Prize · Provincial Second Prize/);
 });
 
 test('does not present template publications or news on the homepage', () => {
