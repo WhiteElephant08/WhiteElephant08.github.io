@@ -33,16 +33,17 @@ test('publishes the confirmed education details without inventing dates or degre
   assert.doesNotMatch(profile, /Education entry pending|date: Pending/);
 });
 
-test('about section describes confirmed interests and skills without mastery claims', () => {
+test('about section follows a concise academic profile structure', () => {
   const profile = read('_data/profile.yml');
 
   assert.match(profile, /机器人学习/);
-  assert.match(profile, /YOLO/);
+  assert.match(profile, /视觉语言动作模型/);
+  assert.match(profile, /完整研究链路/);
   assert.match(profile, /PyTorch/);
   assert.match(profile, /Python/);
   assert.match(profile, /C\+\+/);
   assert.doesNotMatch(profile, /神经网络/);
-  assert.doesNotMatch(profile, /我目前|现阶段|开展过|仍在持续提升/);
+  assert.doesNotMatch(profile, /我目前|现阶段|当前工作|开展过|仍在持续提升/);
   assert.doesNotMatch(profile, /精通|专家|proficient|expert/i);
   assert.doesNotMatch(profile, /个人主页预览/);
 });
