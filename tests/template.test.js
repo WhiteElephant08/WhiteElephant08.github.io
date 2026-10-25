@@ -37,9 +37,8 @@ test('about section follows a concise academic profile structure', () => {
   const profile = read('_data/profile.yml');
 
   assert.match(profile, /机器人学习/);
-  assert.match(profile, /视觉语言动作模型/);
-  assert.match(profile, /如何利用失败信息改进策略/);
-  assert.match(profile, /YOLO/);
+  assert.match(profile, /VLA与计算机视觉/);
+  assert.match(profile, /利用执行反馈改进机器人策略/);
   assert.match(profile, /PyTorch/);
   assert.match(profile, /Python/);
   assert.match(profile, /C\+\+/);

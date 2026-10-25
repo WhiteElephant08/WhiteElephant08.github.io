@@ -15,7 +15,7 @@ github: WhiteElephant08
 short_bio_text_justify: false
 short_bio: >-
   <p>
-    本科就读于东北大学机器人科学与工程学院，专业为机器人工程。兴趣主要在机器人学习、视觉语言动作模型和计算机视觉，尤其关注机器人任务执行中的失败模式，以及如何利用失败信息改进策略。也做过基于YOLO的目标检测实践。
+    本科就读于东北大学机器人工程专业，关注机器人学习、VLA与计算机视觉，尤其对利用执行反馈改进机器人策略感兴趣。
   </p>
 
 portrait_url: /assets/images/photos/portrait.jpg
